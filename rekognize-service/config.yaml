@@ -4,11 +4,11 @@ function_name: RingKogNition
 handler: service.handler
 description: Determines what it is that your ring motion alert sees
 runtime: python3.6
-role: ringkognition-primary-lambda-role
+role: rekognize-service-role
 
 # S3 upload requires appropriate role with s3:PutObject permission
 # (ex. basic_s3_upload), a destination bucket, and the key prefix
-# bucket_name: 'example-bucket'
+bucket_name: '<YOUR BUCKET NAME HERE>'
 # s3_key_prefix: 'path/to/file/'
 
 # if access key and secret are left blank, boto will use the credentials

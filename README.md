@@ -133,13 +133,9 @@ If everything is currently configured correctly, you should be able to now run `
 
 Next comes building it. The bad news is that the build is far to large to upload via the Lambda API. The good news is we can side load it via an S3 bucket. Should I make it more efficient? Probably. It's on the To-do list.
 
-`lambda deploy` comes next. Wait for it to finish building and present you with the appropriate error. Once done, you'll see a newly generated `dist` directory inside of the `rekognize-service` directory. Enter that, and upload that zip file to your S3 bucket.
+`lambda deploy-s3` comes next. It will build and deploy to your AWS account as per the configuration in your `config.yaml` file.
 
-On to Lambda.
-
-Create a lambda function, Python3.6, give it the `rekognize-service-role` role you created before, and ensure it can access its Cloudwatch logs. Give it 300 S of timeout and 1536 MB of Memory. Yes it needs optimizing, maybe I'll rewrite it in Node. Maybe you can!
-
-For the Function Code section, for Code Entry Type select `Upload from S3`. Put the URL of your zip file in there and ensure the handler is `service.handler`. Click upload. Once done, feel free to test it, it should populate the DynamoDB table appropriately.
+ Once done, feel free to test it, it should populate the DynamoDB table appropriately.
 
 ###Congratulations, the core of the work is done, and you're about halfway there.###
 
@@ -151,7 +147,7 @@ Head back to IAM and create another Lambda role:
 
 
 - Role for the `rekognize-alert` Lambda:
-  Create a new role called `rekognize-alert` role. Give it Access to the cloudwatch logs for the given function (can be updated retroactively), and then add the following policy:
+  Create a new role called `rekognize-alert-role`. Give it Access to the cloudwatch logs for the given function (can be updated retroactively), and then add the following policy:
 
   ```
   {
