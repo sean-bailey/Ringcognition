@@ -1,10 +1,10 @@
 # Ringcognition
 This repository contains the files for the Ringkognition project
 
-#rekognize-alert
+# rekognize-alert
 - Contains the python-lambda formatted service for lambda for the SNS based alert service for Ringkognition
 
-#rekognize-service
+# rekognize-service
 - Contains the python-lambda formatted service for lambda for the processing of video clips from Ring
 
 This is an extensive DIY project which aims to solve the main problem I had with Ring:
@@ -137,7 +137,7 @@ Next comes building it. The bad news is that the build is far to large to upload
 
  Once done, feel free to test it, it should populate the DynamoDB table appropriately.
 
-###Congratulations, the core of the work is done, and you're about halfway there.###
+### Congratulations, the core of the work is done, and you're about halfway there. ###
 
 Now for the SNS topic to leverage for alerts. Head over to SNS:
 
