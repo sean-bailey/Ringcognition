@@ -1,11 +1,5 @@
 # Ringcognition
-This repository contains the files for the Ringkognition project
 
-# rekognize-alert
-- Contains the python-lambda formatted service for lambda for the SNS based alert service for Ringkognition
-
-# rekognize-service
-- Contains the python-lambda formatted service for lambda for the processing of video clips from Ring
 
 This is an extensive DIY project which aims to solve the main problem I had with Ring:
 _You have to look at the videos to see what is going on_.
@@ -26,7 +20,12 @@ This Readme will cover all the steps required to get the end-to-end system set u
 *This is not for the faint of heart!* While in the future I aim to make this easy
 to do, as it stands right now there are many steps which you must do manually.
 
-Start by cloning this repo locally and `cd`ing in to it.
+Start by cloning this repo locally and `cd`ing in to it. You'll see two primary directories:
+## rekognize-alert
+- Contains the python-lambda formatted service for lambda for the SNS based alert service for Ringkognition
+
+## rekognize-service
+- Contains the python-lambda formatted service for lambda for the processing of video clips from Ring
 
 First, you'll need to get your AWS and Ring credentials set up. I'm going to assume
 you have a Ring account and an AWS account.
